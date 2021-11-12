@@ -1,0 +1,32 @@
+version: '3.4'
+
+# 共通定義のテンプレート化
+x-template: &template
+  build:
+    context: .
+  volumes:
+    - ./working:/opt/program/working:cached
+    - ~/.kaggle:/root/.kaggle:cached
+    # - /Users/takapy/working/python/udemy/RecommenderSystems/recommenders:/opt/program/working/udemy/RecommenderSystems:cached
+    # - /Users/takapy/working/python/competition/mlflow/mlruns:/opt/program/mlflow/mlruns:cached
+    # - /Users/takapy/working/python/competition/ProbSpace/youtube:/opt/program/working/ProbSpace_youtube:cached
+    # - /Users/takapy/working/python/competition/atmaCup/vol9:/opt/program/working/atmaCup_vol9:cached
+    # - /Users/takapy/working/python/competition/atmaCup/vol10:/opt/program/working/atmaCup_vol10:cached
+    # - /Users/takapy/working/python/competition/signate/jpx:/opt/program/working/signate/jpx:cached
+    # - /Users/takapy/working/repository/geek_blog:/opt/program/working/geek_blog:cached
+    # - /Users/takapy/working/book/Handson_ML_with_ScikitLearn_and_TensorFlow_v2/handson-ml2:/opt/program/working/handson-ml2:cached
+    # - /Users/takapy/working/repository:/opt/program/working/repository:cached
+    # - /Users/takapy/working/python/competition:/opt/program/working/competition:cached
+  # env_file:
+    # - .env
+
+services:
+  ml-jupyter:
+    container_name: 'ml-jupyter'
+    image: ml-jupyter:latest
+    user: root
+    ports:
+      - "8900:8900" # for jupyter
+      - "6006:6006" # for tensorboard
+    command: jupyter lab --allow-root
+    <<: *template

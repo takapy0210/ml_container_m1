@@ -1,0 +1,80 @@
+## standard
+pandas
+setuptools
+numpy
+scipy
+scikit-learn
+category_encoders
+tqdm
+pyyaml
+swifter
+umap-learn
+# ipywidgets
+## visual
+plotly
+matplotlib
+seaborn
+altair
+streamlit
+gradio
+pandas-profiling
+shap
+pydotplus
+graphviz
+matplotlib-venn
+sweetviz
+klib
+quickda
+japanize_matplotlib
+adjusttext
+shapash
+lux-api
+# bamboolib  # M1ではインストールできない
+## GBDT
+lightgbm
+xgboost
+# catboost  # M1ではインストールできない
+optuna
+## NN
+torch
+torchvision
+torchtext
+## NLP
+gensim
+mecab-python3
+neologdn
+spacy
+ginza
+sudachipy
+sudachidict_core
+sudachidict_full
+nlplot
+nltk
+transformers
+texthero
+sumy
+sentencepiece
+pyLDAvis
+boto3
+google-cloud-bigquery
+## jupyter
+jupyterlab-git
+## 株価分析
+pyti
+## other
+fire
+mlflow
+kaggle
+flake8
+jpholiday
+voila
+voila-gridstack
+icecream  # debug
+geopy
+googletrans
+scraping
+beautifulsoup4
+## web
+Flask
+fastapi
+uvicorn
