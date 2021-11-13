@@ -45,7 +45,7 @@ mecab-python3
 neologdn
 spacy
 ginza
-sudachipy
+sudachipy==0.5.4
 sudachidict_core
 sudachidict_full
 nlplot
@@ -74,6 +74,7 @@ geopy
 googletrans
 scraping
 beautifulsoup4
+luigi
 ## web
 Flask
 fastapi

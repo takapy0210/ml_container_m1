@@ -9,7 +9,7 @@ Babel==2.9.1
 backcall==0.2.0
 beautifulsoup4==4.10.0
 bleach==4.1.0
-boto3==1.19.12
+boto3==1.20.5
 cachetools==4.2.4
 category-encoders==2.3.0
 certifi==2021.10.8
@@ -29,6 +29,7 @@ Flask==2.0.2
 flatbuffers==1.12
 gast==0.4.0
 gensim==4.1.2
+geopy==2.2.0
 ginza==5.0.3
 gitdb==4.0.9
 GitPython==3.1.24
@@ -36,17 +37,19 @@ google-auth==2.3.3
 google-auth-oauthlib==0.4.6
 google-cloud-bigquery==2.30.1
 google-pasta==0.2.0
-gradio==2.4.2
+googletrans==3.0.0
+gradio==2.4.5
 graphviz==0.18
 grpcio==1.41.1
 h5py==3.1.0
+icecream==2.1.1
 idna==3.3
 ipykernel==6.5.0
 ipython==7.29.0
 ipython-genutils==0.2.0
 japanize-matplotlib==1.1.3
 jedi==0.18.0
-Jinja2==3.0.2
+Jinja2==3.0.3
 jpholiday==0.1.7
 json5==0.9.6
 jsonschema==4.2.1
@@ -63,6 +66,7 @@ keras==2.6.0
 Keras-Preprocessing==1.1.2
 klib==0.2.0
 lightgbm==3.3.1
+luigi==3.0.3
 lux-api==0.4.0
 Markdown==3.3.4
 MarkupSafe==2.0.1
@@ -73,7 +77,7 @@ mecab-python3==1.0.4
 mistune==0.8.4
 mlflow==1.21.0
 nbclassic==0.3.4
-nbclient==0.5.4
+nbclient==0.5.5
 nbconvert==6.2.0
 nbdime==3.1.1
 nbformat==5.1.3
@@ -108,6 +112,7 @@ pyLDAvis==3.3.1
 pyparsing==2.4.7
 pyrsistent==0.18.0
 python-dateutil==2.8.2
+pyti==0.2.2
 pytz==2021.3
 PyYAML==6.0
 pyzmq==22.3.0
@@ -117,6 +122,7 @@ requests-oauthlib==1.3.0
 rsa==4.7.2
 scikit-learn==1.0.1
 scipy==1.7.2
+scraping==0.0.3
 seaborn==0.11.2
 Send2Trash==1.8.0
 sentencepiece==0.1.96
@@ -126,9 +132,9 @@ six==1.15.0
 smmap==5.0.0
 sniffio==1.2.0
 spacy==3.2.0
-streamlit==1.1.0
-SudachiDict-core==20210802
-SudachiDict-full==20210802
+streamlit==1.2.0
+SudachiDict-core==20210802.post1
+SudachiDict-full==20210802.post1
 SudachiPy==0.5.4
 sumy==0.9.0
 sweetviz==2.1.3
@@ -142,6 +148,9 @@ termcolor==1.1.0
 terminado==0.12.1
 testpath==0.5.0
 texthero==1.1.0
+torch==1.10.0
+torchtext==0.11.0
+torchvision==0.11.1
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
@@ -150,6 +159,8 @@ typing-extensions==3.7.4.3
 umap-learn==0.5.2
 urllib3==1.26.7
 uvicorn==0.15.0
+voila==0.2.16
+voila-gridstack==0.2.0
 wcwidth==0.2.5
 webencodings==0.5.1
 websocket-client==1.2.1
