@@ -75,6 +75,10 @@ googletrans
 scraping
 beautifulsoup4
 luigi
+joblib
+threadpoolctl
+tenacity
+python-daemon
 ## web
 Flask
 fastapi

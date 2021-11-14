@@ -7,6 +7,7 @@ x-template: &template
   volumes:
     - ./working:/opt/program/working:cached
     - ~/.kaggle:/root/.kaggle:cached
+    - /Users/takapy/python/repository/geek_blog:/opt/program/working/geek_blog:cached
 
 services:
   ml-jupyter:
@@ -16,5 +17,6 @@ services:
     ports:
       - "8900:8900" # for jupyter
       - "6006:6006" # for tensorboard
+      - "8082:8082" # for Luigi
     command: jupyter lab --allow-root
     <<: *template
