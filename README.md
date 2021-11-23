@@ -1,7 +1,7 @@
 # Machine Learning Container for M1 Max
 
 M1 Mac対応のデータ分析用のコンテナイメージです。  
-2021/11/13 時点においては、requirement.lockファイルを使用していません。  
+2021/11/13 時点においては、requirements.lockファイルを使用していません。  
 （tensorflowが特殊な形式でしかインストールできないため）
 念の為、2021/11/13 時点のpip freezeしたものを`requirements.lock`には出力してあります。
 

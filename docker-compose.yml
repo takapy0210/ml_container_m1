@@ -7,7 +7,8 @@ x-template: &template
   volumes:
     - ./working:/opt/program/working:cached
     - ~/.kaggle:/root/.kaggle:cached
-    - /Users/takapy/python/repository/geek_blog:/opt/program/working/geek_blog:cached
+    - /Users/takapy/working/repository:/opt/program/working/repository:cached
+    - /Users/takapy/working/competition:/opt/program/working/competition:cached
 
 services:
   ml-jupyter:

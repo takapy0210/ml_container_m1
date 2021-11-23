@@ -9,6 +9,7 @@ tqdm
 pyyaml
 swifter
 umap-learn
+psutil
 # ipywidgets
 ## visual
 plotly

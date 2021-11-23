@@ -79,8 +79,8 @@ RUN python3 -m pip install tensorflow==2.6.0 -f https://tf.kmtea.eu/whl/stable.h
 
 # takaggle
 # 頻繁に更新するので個別でインストール
-# RUN pip3 install -U git+https://github.com/takapy0210/takaggle@v1.0.27 && \
-#     rm -rf /root/.cache
+RUN python3 -m  pip install -U git+https://github.com/takapy0210/takaggle@v1.0.30 && \
+    rm -rf /root/.cache
 
 # Set up the program in the image
 COPY working /opt/program/working
