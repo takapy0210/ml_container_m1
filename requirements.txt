@@ -60,6 +60,7 @@ boto3
 google-cloud-bigquery
 ## jupyter
 jupyterlab-git
+jupyternotify  # セルの実行終了を通知（jupyter labではjsのエラーが出て使えない）
 ## 株価分析
 pyti
 ## other
