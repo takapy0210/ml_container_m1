@@ -1,10 +1,12 @@
 ## standard
 pandas
 setuptools
-numpy
+wheel
+numpy==1.20.0
 scipy
 scikit-learn
-category_encoders
+# category_encoders
+git+https://github.com/pfnet-research/xfeat.git
 tqdm
 pyyaml
 swifter
@@ -13,12 +15,16 @@ psutil
 # ipywidgets
 ## visual
 plotly
+wordcloud
+networkx
+nlplot
 matplotlib
+Pillow
 seaborn
 altair
 streamlit
-gradio
-pandas-profiling
+# gradio
+# pandas-profiling
 shap
 pydotplus
 graphviz
@@ -28,8 +34,9 @@ klib
 quickda
 japanize_matplotlib
 adjusttext
-shapash
+# shapash  # M1ではインストールできない
 lux-api
+missingno
 # bamboolib  # M1ではインストールできない
 ## GBDT
 lightgbm
@@ -37,9 +44,9 @@ xgboost
 # catboost  # M1ではインストールできない
 optuna
 ## NN
-torch
-torchvision
-torchtext
+# torch
+# torchvision
+# torchtext
 ## NLP
 gensim
 mecab-python3
@@ -51,11 +58,12 @@ sudachidict_core
 sudachidict_full
 nlplot
 nltk
-transformers
+# transformers # M1ではインストールできない
 texthero
 sumy
 sentencepiece
 pyLDAvis
+# cloud
 boto3
 google-cloud-bigquery
 ## jupyter
@@ -63,25 +71,30 @@ jupyterlab-git
 jupyternotify  # セルの実行終了を通知（jupyter labではjsのエラーが出て使えない）
 ## 株価分析
 pyti
+ccxt
+git+https://github.com/richmanbtc/crypto_data_fetcher.git@v0.0.17#egg=crypto_data_fetcher
 ## other
 fire
 mlflow
 kaggle
 flake8
 jpholiday
-voila
-voila-gridstack
-icecream  # debug
-geopy
-googletrans
-scraping
-beautifulsoup4
+# voila
+# voila-gridstack
+# icecream  # debug
+# geopy
+# googletrans
+# scraping
+# beautifulsoup4
 luigi
 joblib
-threadpoolctl
-tenacity
-python-daemon
+# threadpoolctl
+# tenacity
+# python-daemon
+# beautifulsoup4
 ## web
 Flask
 fastapi
 uvicorn
+## 高速化
+numba

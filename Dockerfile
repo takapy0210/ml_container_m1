@@ -68,10 +68,26 @@ RUN git clone https://github.com/facebookresearch/fastText.git && \
 
 # COPY requirements.lock /tmp/requirements.lock
 COPY requirements.txt /tmp/requirements.txt
-RUN python3 -m pip install -U pip && \
-    python3 -m pip install --no-deps -r /tmp/requirements.txt && \
+# RUN python3 -m pip install -U pip && \
+#     python3 -m pip install --no-deps -r /tmp/requirements.txt && \
+#     rm /tmp/requirements.txt && \
+#     rm -rf /root/.cache
+RUN python3 -m pip install -U pip
+RUN python3 -m pip install -r /tmp/requirements.txt && \
     rm /tmp/requirements.txt && \
     rm -rf /root/.cache
+
+# TA-libのインストール
+RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && \
+    cd ta-lib && \
+    cp /usr/share/automake-1.16/config.guess . && \
+    ./configure --prefix=/usr && \
+    make && \
+    sudo make install && \
+    cd .. && \
+    rm -rf ta-lib-0.4.0-src.tar.gz && rm -rf ta-lib
+RUN python3 -m pip install TA-Lib
 
 # M1 Mac用のTensorflowインストールコマンド
 RUN python3 -m pip install tensorflow==2.6.0 -f https://tf.kmtea.eu/whl/stable.html && \
