@@ -68,6 +68,7 @@ RUN git clone https://github.com/facebookresearch/fastText.git && \
 
 # COPY requirements.lock /tmp/requirements.lock
 COPY requirements.txt /tmp/requirements.txt
+# 依存関係を無視してインストールする場合
 # RUN python3 -m pip install -U pip && \
 #     python3 -m pip install --no-deps -r /tmp/requirements.txt && \
 #     rm /tmp/requirements.txt && \
