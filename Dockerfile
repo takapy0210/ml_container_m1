@@ -45,10 +45,11 @@ ENV MECABRC=/etc/mecabrc
 
 # jupyter lab
 RUN python3 -m pip install -U pip && \
-    python3 -m pip install jupyterlab && \
-    python3 -m pip install jupyterlab-git && \
+    python3 -m pip install jupyterlab==3.3.4 && \
+    python3 -m pip install jupyterlab-git==0.36.0 && \
     mkdir ~/.jupyter
-COPY ./jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+# COPY ./jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+COPY ./jupyter_lab_config.py /root/.jupyter/jupyter_lab_config.py
 RUN export NODE_OPTIONS=--max-old-space-size=4096
 RUN jupyter serverextension enable --py jupyterlab && \
     jupyter labextension install --no-build jupyterlab-plotly && \
@@ -66,18 +67,6 @@ RUN git clone https://github.com/facebookresearch/fastText.git && \
     cd fastText && \
     python3 -m pip install --no-deps .
 
-# COPY requirements.lock /tmp/requirements.lock
-COPY requirements.txt /tmp/requirements.txt
-# 依存関係を無視してインストールする場合
-# RUN python3 -m pip install -U pip && \
-#     python3 -m pip install --no-deps -r /tmp/requirements.txt && \
-#     rm /tmp/requirements.txt && \
-#     rm -rf /root/.cache
-RUN python3 -m pip install -U pip
-RUN python3 -m pip install -r /tmp/requirements.txt && \
-    rm /tmp/requirements.txt && \
-    rm -rf /root/.cache
-
 # TA-libのインストール
 RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && \
@@ -94,10 +83,25 @@ RUN python3 -m pip install TA-Lib
 RUN python3 -m pip install tensorflow==2.6.0 -f https://tf.kmtea.eu/whl/stable.html && \
     python3 -m pip install keras==2.6.*
 
+
+# COPY requirements.lock /tmp/requirements.lock
+COPY requirements.txt /tmp/requirements.txt
+# 依存関係を無視してインストールする場合
+# RUN python3 -m pip install -U pip && \
+#     python3 -m pip install --no-deps -r /tmp/requirements.txt && \
+#     rm /tmp/requirements.txt && \
+#     rm -rf /root/.cache
+RUN python3 -m pip install -U pip
+RUN python3 -m pip install -r /tmp/requirements.txt && \
+    rm /tmp/requirements.txt && \
+    rm -rf /root/.cache
+
+# RUN python3 -m pip install cython
+
 # takaggle
 # 頻繁に更新するので個別でインストール
-RUN python3 -m  pip install -U git+https://github.com/takapy0210/takaggle@v1.0.30 && \
-    rm -rf /root/.cache
+# RUN python3 -m  pip install -U git+https://github.com/takapy0210/takaggle@v1.0.30 && \
+#     rm -rf /root/.cache
 
 # Set up the program in the image
 COPY working /opt/program/working

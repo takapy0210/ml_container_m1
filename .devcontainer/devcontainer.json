@@ -1,0 +1,50 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/docker-existing-docker-compose
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+	"name": "jupyterlab dev",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.extend.yml"
+	],
+	"service": "ml-jupyter",
+	"shutdownAction": "stopCompose",
+	"workspaceFolder": "/opt/program/working",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "/bin/bash"
+					}
+				},
+				"python.languageServer": "Default",
+				"python.analysis.extraPaths": [
+					"/usr/local/lib/python3.9/site-packages"
+				],
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": false,
+				"python.linting.flake8Enabled": true,
+				"python.linting.lintOnSave": true,
+				"python.linting.flake8Args": [
+					"--max-line-length=120",
+					"--max-complexity=20"
+				],
+				"python.formatting.provider": "autopep8",
+				"python.formatting.autopep8Args": [
+					"--max-line-length=120"
+				],
+				"editor.formatOnSave": true,
+				"files.autoSave": "afterDelay"
+			},
+			"extensions": [
+				"donjayamanne.githistory",
+				"GitHub.vscode-pull-request-github",
+				"ms-python.python",
+				"njpwerner.autodocstring",
+				"oderwat.indent-rainbow",
+				"DavidAnson.vscode-markdownlint"
+			]
+		}
+	}
+}

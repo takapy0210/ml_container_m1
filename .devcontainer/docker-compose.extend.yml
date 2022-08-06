@@ -1,0 +1,8 @@
+version: '3.4'
+services:
+  ml-jupyter:
+    # volumes:
+    #   - ../:/workspace:cached
+    environment:
+      - PYTHONPATH=/usr/local/lib/python3.9
+    command: /bin/sh -c "while sleep 1000; do :; done" # Overrides default command so things don't shut down after the process ends. 

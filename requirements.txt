@@ -9,8 +9,10 @@ tqdm
 pyyaml
 swifter
 umap-learn
+pyarrow
 psutil
 ipywidgets
+cython
 
 ## visual
 plotly
@@ -49,7 +51,7 @@ optuna
 gensim
 mecab-python3
 neologdn
-spacy
+# spacy
 ginza
 sudachipy==0.5.4
 sudachidict_core
@@ -64,7 +66,7 @@ sentencepiece
 
 ## cloud
 boto3
-google-cloud-bigquery
+google-cloud-bigquery==2.4.0
 
 # ## jupyter
 jupyterlab-git
@@ -80,6 +82,9 @@ fire
 mlflow
 kaggle
 flake8
+autopep8
+pytest
+pytest-datadir
 jpholiday
 # voila
 # voila-gridstack
@@ -94,6 +99,9 @@ joblib
 # tenacity
 # python-daemon
 # beautifulsoup4
+Levenshtein
+emoji
+networkx
 
 ## web
 Flask
