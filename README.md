@@ -1,15 +1,13 @@
 # Machine Learning Container for M1 Max
 
-M1 Mac対応のデータ分析用のコンテナイメージです。  
-2021/11/13 時点においては、requirements.lockファイルを使用していません。  
-（tensorflowが特殊な形式でしかインストールできないため）
-念の為、2021/11/13 時点のpip freezeしたものを`requirements.lock`には出力してあります。
+M1 Mac対応のデータ分析用のコンテナイメージです.  
+2022/08/01 時点においては、requirements.lockファイルを使用していません. 
 
 ## How to use
 
 1. コンテナのビルド&起動  
 ```sh
-# ビルド（初回は結構時間かかります...）
+# ビルド（初回は結構時間かかります）
 $ docker compose build
 
 # jupyterの起動
@@ -18,6 +16,10 @@ $ docker compose up -d ml-jupyter
 
 2. ブラウザから`http://127.0.0.1:8900/lab`にアクセス  
 `password`の文字列を入力するとjupyterが使えます
+
+### [Visual Studio Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) に対応しています
+
+- `.devcontainer/` にremote containerに使用するファイルをまとめています 
 
 ## Install or Update Library
 

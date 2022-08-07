@@ -12,12 +12,6 @@
 		"source=/Users/takapy/working/ml_container_m1/.devcontainer/setup.sh,target=/opt/program/working/setup.sh,type=bind,consistency=cached",
 		"source=/Users/takapy/working/ml_container_m1/.devcontainer/.zshrc_devcontainer,target=/root/.zshrc,type=bind,consistency=cached"
 	],
-	// "dockerComposeFile": [
-	// 	"../docker-compose.yml",
-	// 	"docker-compose.extend.yml"
-	// ],
-	// "service": "ml-python",
-	// "shutdownAction": "stopCompose",
 	"workspaceFolder": "/opt/program/working",
 	"customizations": {
 		"vscode": {
