@@ -2,20 +2,29 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/docker-existing-docker-compose
 // If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
 {
-	"name": "jupyterlab dev",
-	"dockerComposeFile": [
-		"../docker-compose.yml",
-		"docker-compose.extend.yml"
+	"name": "python3.9 dev",
+	"dockerFile": "../Dockerfile",
+	"mounts": [
+		"source=/Users/takapy/working/ml_container_m1/working,target=/opt/program/working,type=bind,consistency=cached",
+		"source=/Users/takapy/.kaggle,target=/root/.kaggle,type=bind,consistency=cached",
+		"source=/Users/takapy/working/repository,target=/opt/program/working/repository,type=bind,consistency=cached",
+		"source=/Users/takapy/working/competition,target=/opt/program/working/competition,type=bind,consistency=cached",
+		"source=/Users/takapy/working/ml_container_m1/.devcontainer/setup.sh,target=/opt/program/working/setup.sh,type=bind,consistency=cached",
+		"source=/Users/takapy/working/ml_container_m1/.devcontainer/.zshrc_devcontainer,target=/root/.zshrc,type=bind,consistency=cached"
 	],
-	"service": "ml-jupyter",
-	"shutdownAction": "stopCompose",
+	// "dockerComposeFile": [
+	// 	"../docker-compose.yml",
+	// 	"docker-compose.extend.yml"
+	// ],
+	// "service": "ml-python",
+	// "shutdownAction": "stopCompose",
 	"workspaceFolder": "/opt/program/working",
 	"customizations": {
 		"vscode": {
 			"settings": {
 				"terminal.integrated.profiles.linux": {
 					"bash": {
-						"path": "/bin/bash"
+						"path": "/usr/bin/zsh"
 					}
 				},
 				"python.languageServer": "Default",
@@ -46,5 +55,6 @@
 				"DavidAnson.vscode-markdownlint"
 			]
 		}
-	}
+	},
+	"postCreateCommand": "sh setup.sh"
 }

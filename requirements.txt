@@ -1,8 +1,5 @@
-## standard
 pandas
 numpy
-# setuptools
-# wheel
 scipy
 scikit-learn
 tqdm
@@ -35,6 +32,7 @@ quickda
 japanize_matplotlib
 adjusttext
 missingno
+pyvis
 
 ## GBDT
 lightgbm
@@ -51,7 +49,7 @@ optuna
 gensim
 mecab-python3
 neologdn
-# spacy
+# spacy # M1ではインストールできない
 ginza
 sudachipy==0.5.4
 sudachidict_core
@@ -86,6 +84,11 @@ autopep8
 pytest
 pytest-datadir
 jpholiday
+luigi
+joblib
+Levenshtein
+emoji
+networkx
 # voila
 # voila-gridstack
 # icecream  # debug
@@ -93,20 +96,15 @@ jpholiday
 # googletrans
 # scraping
 # beautifulsoup4docker
-luigi
-joblib
 # threadpoolctl
 # tenacity
 # python-daemon
 # beautifulsoup4
-Levenshtein
-emoji
-networkx
 
 ## web
 Flask
 fastapi
 uvicorn
 
-# ## 高速化
+## 高速化
 # numba

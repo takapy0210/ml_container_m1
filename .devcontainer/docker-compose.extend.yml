@@ -1,6 +1,6 @@
 version: '3.4'
 services:
-  ml-jupyter:
+  ml-python:
     # volumes:
     #   - ../:/workspace:cached
     environment:
