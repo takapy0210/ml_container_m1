@@ -1,6 +1,4 @@
-FROM python:3.9
-
-LABEL multi.version="1.0" multi.maintainer="takapy <takanobu.030210@gmail.com>"
+FROM python:3.11
 
 ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
@@ -51,16 +49,18 @@ RUN python3 -m pip install -U pip && \
 # COPY ./jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 COPY ./jupyter_lab_config.py /root/.jupyter/jupyter_lab_config.py
 RUN export NODE_OPTIONS=--max-old-space-size=4096
-RUN jupyter serverextension enable --py jupyterlab && \
-    jupyter labextension install --no-build jupyterlab-plotly && \
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
-    jupyter labextension install luxwidget && \
+# RUN jupyter serverextension enable --py jupyterlab && \
+#     jupyter labextension install --no-build jupyterlab-plotly && \
+#     jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
+#     jupyter labextension install luxwidget && \
     # jupyter labextension install --no-build @jupyterlab/toc && \
     # jupyter labextension install --no-build jupyterlab-flake8 && \
     # jupyter labextension install --no-build jupyterlab-topbar-extension jupyterlab-system-monitor && \
     # jupyter labextension install --no-build @jupyter-widgets/jupyterlab-manager && \
     # jupyter labextension install --no-build @jupyterlab/debugger && \
-    jupyter lab build
+    # jupyter lab build
+
+RUN jupyter lab build
 
 # RUN git clone https://github.com/K-PTL/noglobal-python
 RUN git clone https://github.com/facebookresearch/fastText.git && \
@@ -80,8 +80,8 @@ RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && \
 RUN python3 -m pip install TA-Lib
 
 # M1 Mac用のTensorflowインストールコマンド
-RUN python3 -m pip install tensorflow==2.6.0 -f https://tf.kmtea.eu/whl/stable.html && \
-    python3 -m pip install keras==2.6.*
+# RUN python3 -m pip install tensorflow==2.6.0 -f https://tf.kmtea.eu/whl/stable.html && \
+#     python3 -m pip install keras==2.6.*
 
 
 # COPY requirements.lock /tmp/requirements.lock

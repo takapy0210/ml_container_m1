@@ -41,6 +41,7 @@ xgboost
 optuna
 
 ## NN
+tensorflow
 # torch
 # torchvision
 # torchtext
@@ -50,16 +51,16 @@ gensim
 mecab-python3
 neologdn
 # spacy # M1ではインストールできない
-ginza
-sudachipy==0.5.4
-sudachidict_core
-sudachidict_full
-nlplot
-nltk
+# ginza
+# sudachipy==0.5.4
+# sudachidict_core
+# sudachidict_full
+# nlplot
+# nltk
 # transformers # M1ではインストールできない
-texthero
-sumy
-sentencepiece
+# texthero
+# sumy
+# sentencepiece
 # pyLDAvis
 
 ## cloud
